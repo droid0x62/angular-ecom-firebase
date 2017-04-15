@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html ng-app="app">
+    <head>
+    <title>MudCafe</title>
+        <!--stylesheets-->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="bower_components/materialize/dist/css/materialize.min.css" type="text/css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+        
+        <!--scripts-->
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/materialize/dist/js/materialize.min.js" type="text/javascript"></script>
+        
+        <!--angular scripts-->
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+        <script src="js/app.js" ></script>
+        <script src="js/controllers/loginCtrl.js"></script>
+        <script src="js/controllers/homeCtrl.js"></script>
+    </head>
+    <body>
+        
+       <div ng-controller = "navController"> 
+        <nav class="light-blue lighten-1" role="navigation">
+            <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">
+                <i class="medium material-icons">forum</i>MudCoffee</a>
+              <ul class="right hide-on-med-and-down">
+                  <li><a ui-sref="login" class="btn yellow black-text" ng-cloak>{{userStatusBtn}}</a></li>
+                  <li ng-if="logBtnStatus == true"><a class="btn yellow black-text" ng-cloak>
+                      <i class="material-icons" ng-click="signOut()">settings_power</i></a></li>
+                  <li><a class=" btn red"><i class="material-icons">shopping_cart</i></a></li>
+                  
+              </ul> <br>
+                           
+            </div>
+               
+        </nav>
+        <div class="container">
+            <ul class="navigationitems">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">CoffeeMug</a></li>
+                <li><a href="#">Mochas</a></li>
+                <li><a href="#">Pizza</a></li>
+                <li><a href="#">Grilled</a></li>
+                <li><a href="#">Pitchers</a></li>
+            </ul>
+        </div>
+      </div><!--end of navcontroller--> 
+   
+        <div ui-view>
+        
+        </div> 
+
+
+
+  
+        <!--firebase integration-->
+        
+<script src="https://www.gstatic.com/firebasejs/3.7.4/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyB02L16_UXalPntB_QD0HpwQ0A2GhNlRko",
+    authDomain: "mudcoffee-76c56.firebaseapp.com",
+    databaseURL: "https://mudcoffee-76c56.firebaseio.com",
+    projectId: "mudcoffee-76c56",
+    storageBucket: "mudcoffee-76c56.appspot.com",
+    messagingSenderId: "917684818205"
+  };
+  firebase.initializeApp(config);
+</script>
+
+        
+    </body>
+</html>

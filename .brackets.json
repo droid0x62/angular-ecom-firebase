@@ -1,0 +1,6 @@
+{
+    "jscodehints.detectedExclusions": [
+        "C:/xampp/htdocs/learn/eangular/bower_components/jquery/src/core/parseHTML.js",
+        "picker.js"
+    ]
+}
